@@ -23,16 +23,23 @@ This module sorts lists of integers...
 
 def bubble(int_list):
     """
-    bubble docstring
+    :param int_list: the list of only integers to be sorted
     """
-    print("bubble sort")
+    length = range(int_list)
+    for i in range(length):
+        swapped = False
+        for j in range(length - i - 1):
+            if int_list[j] > int_list[j + 1]:
+                int_list[j], int_list[j + 1] = int_list[j + 1], int_list[j]
+                swapped = True
+        if swapped == False:
+            break
 
 
 def quick(int_list):
     """
-    qsort docstring
+    :param int_list: the list of only integers to be sorted
     """
-    print("quick sort")
 
 
 def insertion(int_list):
