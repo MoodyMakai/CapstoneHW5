@@ -19,7 +19,7 @@
 """
 This module provide functions to sort a list of integers in many ways.
 It implements, bubble, quick, and insertion sort in their respective functions.
-Pass a list of only integers into any of these functions and it will sort that list.
+Pass a list of integers into any of these functions and it will sort that list.
 """
 
 
@@ -36,13 +36,14 @@ def bubble(int_list):
             if int_list[j] > int_list[j + 1]:
                 int_list[j], int_list[j + 1] = int_list[j + 1], int_list[j]
                 swapped = True
-        if swapped == False:
+        if swapped is False:
             break
 
 
 def _quick_recursive(arr_part, low, high):
     """
-    A helper function for quick that allows it to be recursive. Not part of the api.
+    A helper function for quick that allows it to be recursive.
+    Not part of the api.
 
     :param arr_part: The partition of the list you are working on.
     :param low: The lower bound for the partition.
