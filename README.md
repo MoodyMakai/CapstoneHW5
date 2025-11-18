@@ -32,3 +32,33 @@ Possible work division, three sub-teams:
 1. Implementing testing code, mastering pytest, black, flake8 (tasks 3,4,6).
 1. Understanding pytest, black, flake8 and mastering GitHub workflows (tasks 5,6).
 
+## Developer Installation
+
+Clone the repository and change directory into it:
+```bash
+git clone https://github.com/MoodyMakai/CapstoneHW5.git
+cd CapstoneHW5
+```
+
+It is reccomended to setup a virtual environment:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+Install the developer requirements and pre-commit:
+`make`
+
+If you don't have make:
+```bash
+pip install --upgrade pip
+pip install -r requirements-dev.txt
+pre-commit install
+```
+
+## Developer Usage and Guidelines
+
+This repository is linted using black and flake8 formatters. It also has a max file size of 500kb.
+
+To check if your code complies with standards, run: `pre-commit run --all-files`
+
+pre-commit should also run automatically when commiting.
