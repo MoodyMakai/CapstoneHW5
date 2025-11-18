@@ -61,7 +61,6 @@ def _quick_recursive(arr_part, low, high):
         pivot = i + 1
         _quick_recursive(arr_part, low, pivot - 1)
         _quick_recursive(arr_part, pivot + 1, high)
-    
 
 
 def quick(int_list):
