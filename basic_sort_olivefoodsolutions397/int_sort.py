@@ -38,6 +38,7 @@ def bubble(int_list):
                 swapped = True
         if swapped is False:
             break
+    return int_list
 
 
 def _quick_recursive(arr_part, low, high):
@@ -60,6 +61,7 @@ def _quick_recursive(arr_part, low, high):
         pivot = i + 1
         _quick_recursive(arr_part, low, pivot - 1)
         _quick_recursive(arr_part, pivot + 1, high)
+    
 
 
 def quick(int_list):
@@ -71,6 +73,7 @@ def quick(int_list):
     low = 0
     high = len(int_list) - 1
     _quick_recursive(int_list, low, high)
+    return int_list
 
 
 def insertion(int_list):
@@ -86,3 +89,4 @@ def insertion(int_list):
             int_list[j + 1] = int_list[j]
             j -= 1
         int_list[j + 1] = key
+    return int_list

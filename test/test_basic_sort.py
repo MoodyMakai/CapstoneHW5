@@ -17,31 +17,30 @@
 # =========================================================================
 
 
-import numpy as np
-
 import pytest
-
-
-def is_sorted(self, int_list):
-    """
-    Testing oracle.
-    """
-    return True
-
+import numpy as np
+from basic_sort_olivefoodsolutions397 import int_sort
 
 @pytest.fixture
 def int_lists():
-    # fixture which creates testing data for all tests
-    return [[3, 2, 1], [1, 1, 1], np.random.randint(low=-10, high=200, size=5)]
-
+    return [
+        [3, 2, 1],
+        [1, 1, 1],
+        list(np.random.randint(-10, 200, 5))
+    ]
 
 def test_bubble(int_lists):
-    assert True
-
+    for lst in int_lists:
+        sorted_list = int_sort.bubble(lst.copy())
+        assert sorted_list == sorted(lst)
 
 def test_quick(int_lists):
-    assert True
-
+    for lst in int_lists:
+        sorted_list = int_sort.quick(lst.copy())
+        assert sorted_list == sorted(lst)
 
 def test_insertion(int_lists):
-    assert True
+    for lst in int_lists:
+        sorted_list = int_sort.insertion(lst.copy())
+        assert sorted_list == sorted(lst)
+
