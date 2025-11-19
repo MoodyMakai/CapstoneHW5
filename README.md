@@ -60,6 +60,8 @@ pip install -r requirements.txt
 pip install -r requirements-dev.txt
 pre-commit install
 ```
+tests can be run with:
+`pytest`
 
 ## Developer Usage and Guidelines
 
