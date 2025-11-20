@@ -25,7 +25,13 @@ import pytest
 
 @pytest.fixture
 def int_lists():
-    return [[3, 2, 1], [1, 1, 1], list(np.random.randint(-10, 200, 5))]
+    return [
+        [0, -9000, 11, -3],
+        [3, 2, 1],
+        [1, 1, 1],
+        list(np.random.randint(-10, 200, 5)),
+        list(np.random.randint(-10000, 10000, 150)),
+    ]
 
 
 def test_bubble(int_lists):
