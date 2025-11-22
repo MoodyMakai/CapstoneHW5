@@ -34,10 +34,10 @@ jobs:
 
 
       - name: Run Flake8 Linter
-        run: flake8 sort_lib
+        run: flake8 basic_sort_olivefoodsolutions397
       
       - name: Run Black Formatter
-        run: black --check sort_lib
+        run: black --check basic_sort_olivefoodsolutions397
 
       - name: Run tests
         run: pytest -q
