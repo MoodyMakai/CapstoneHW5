@@ -16,9 +16,14 @@
 #
 # =========================================================================
 
+import time
+import tracemalloc
+
 from basic_sort_olivefoodsolutions397 import int_sort
 
 import numpy as np
+
+import psutil
 
 import pytest
 
@@ -31,6 +36,8 @@ def int_lists():
         [1, 1, 1],
         list(np.random.randint(-10, 200, 5)),
         list(np.random.randint(-10000, 10000, 150)),
+        list(np.random.randint(0, 100, 10000)),
+        list(np.random.randint(0, 25, 10000)),
     ]
 
 
@@ -49,4 +56,56 @@ def test_quick(int_lists):
 def test_insertion(int_lists):
     for lst in int_lists:
         sorted_list = int_sort.insertion(lst.copy())
+        assert sorted_list == sorted(lst)
+
+
+def test_bubble_cpu(int_lists):
+    proc = psutil.Process()
+    proc.cpu_percent()  #
+
+    for lst in int_lists:
+        proc.cpu_percent()
+        sorted_list = int_sort.bubble(lst.copy())
+        cpu = proc.cpu_percent()
+        print(
+            "Bubble sort on list of size",
+            len(lst),
+            "used",
+            (cpu),
+            "% of the cpu",
+        )
+        assert sorted_list == sorted(lst)
+
+
+def test_quick_runtime(int_lists):
+    for lst in int_lists:
+        start_time = time.perf_counter()
+        sorted_list = int_sort.quick(lst.copy())
+        end_time = time.perf_counter()
+        print(
+            "Quick sort on list of size",
+            len(lst),
+            "took",
+            "{:.4}".format(end_time - start_time),
+            "seconds",
+        )
+        assert sorted_list == sorted(lst)
+
+
+def test_insertion_memory(
+    int_lists,
+):  # had to use tracemalloc since psutil was not giving any results
+    for lst in int_lists:
+        tracemalloc.start()
+        data = lst.copy()
+        sorted_list = int_sort.insertion(data)
+        current, peak = tracemalloc.get_traced_memory()
+        tracemalloc.stop()
+        print(
+            "Insertion sort on list of size",
+            len(lst),
+            "had peak memory usage of",
+            "{:.4}".format(peak / (1024)),
+            "KB",
+        )
         assert sorted_list == sorted(lst)
