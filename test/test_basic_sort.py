@@ -61,7 +61,7 @@ def test_insertion(int_lists):
 
 def test_bubble_cpu(int_lists):
     proc = psutil.Process()
-    proc.cpu_percent()  #
+    proc.cpu_percent()
 
     for lst in int_lists:
         proc.cpu_percent()
