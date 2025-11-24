@@ -70,3 +70,21 @@ This repository is linted using black and flake8 formatters. It also has a max f
 To check if your code complies with standards, run: `pre-commit run --all-files`
 
 pre-commit should also run automatically when commiting.
+
+
+## Table of Testing Times 
+_________________________________________________________________
+|Operating System | Python Version  |  Test Time  |  Total Time |  
+|_________________|_________________|_____________|_____________|
+|  Mac            |  3.9            |  63.04s     |  116s       |
+|_________________|_________________|_____________|_____________|
+|  Mac            |  3.10           |  70.19s     |  116s       |
+|_________________|_________________|_____________|_____________|
+|  Windows        |  3.9            |  79.50s     |  133s       |
+|_________________|_________________|_____________|_____________|
+|  Windows        |  3.10           |  74.30s     |  120s       |
+|_________________|_________________|_____________|_____________|
+|  Ubuntu/Linux   |  3.9            |  75.38s     |  93s        |
+|_________________|_________________|_____________|_____________|
+|  Ubuntu/Linux   |  3.10           |  69.70s     |  88s        |
+|_________________|_________________|_____________|_____________|
