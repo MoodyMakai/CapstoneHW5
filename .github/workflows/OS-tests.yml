@@ -1,0 +1,43 @@
+name: Operating Systems Test + Python two Version test.
+
+on: 
+  push:
+  pull_request:
+
+jobs: 
+  Operating_system_matrix: 
+    #marix.variable is how to call each instance.
+    # matrix.os calls one for each operating system.
+    strategy:
+      matrix: 
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ["3.9", "3.10"]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 
+        uses: actions/setup-python@v5
+        with: 
+          python-version: ${{ matrix.python-version }}
+     
+      #https://packaging.python.org/en/latest/tutorials/installing-packages
+      #upgrade pip incase of version issues.
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt 
+          python3 -m pip install -e .
+
+
+      - name: Run Flake8 Linter
+        run: flake8 basic_sort_olivefoodsolutions397
+      
+      - name: Run Black Formatter
+        run: black --check basic_sort_olivefoodsolutions397
+
+      - name: Run tests
+        run: pytest -q
