@@ -28,6 +28,8 @@ def bubble(int_list):
     A function that sorts a given list of integers using bubble sort.
 
     :param int_list: the list of only integers to be sorted.
+
+    :returns: a sorted list with the intergers sorted in ascending order.
     """
     length = len(int_list)
     for i in range(length):
@@ -49,6 +51,8 @@ def _quick_recursive(arr_part, low, high):
     :param arr_part: The partition of the list you are working on.
     :param low: The lower bound for the partition.
     :param high: The upper bound for the partition.
+
+    :returns: a sort list with the intergers sorted in ascending order.
     """
     if low < high:
         pi = arr_part[high]
@@ -68,6 +72,8 @@ def quick(int_list):
     A function that sorts a given list of integers using quick sort.
 
     :param int_list: the list of only integers to be sorted.
+
+    :returns: a sort list with the intergers sorted in ascending order.
     """
     low = 0
     high = len(int_list) - 1
@@ -77,9 +83,11 @@ def quick(int_list):
 
 def insertion(int_list):
     """
-    A function that sorts a given list of integers using quick sort.
+    A function that sorts a given list of integers using insertion sort.
 
     :param int_list: the list of only integers to be sorted.
+
+    :returns: a sort list with the intergers sorted in ascending order.
     """
     for i in range(1, len(int_list)):
         key = int_list[i]
