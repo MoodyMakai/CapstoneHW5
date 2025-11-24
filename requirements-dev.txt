@@ -6,4 +6,5 @@ black
 wheel
 packaging
 pre-commit
+psutil
 -rrequirements.txt
