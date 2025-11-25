@@ -87,3 +87,5 @@ pre-commit should also run automatically when commiting.
 ## Testing Status
 
 [![Operating Systems Test + Python two Version test.](https://github.com/MoodyMakai/CapstoneHW5/actions/workflows/OS-tests.yml/badge.svg)](https://github.com/MoodyMakai/CapstoneHW5/actions/workflows/OS-tests.yml)
+
+[![pre-commit](https://github.com/MoodyMakai/CapstoneHW5/actions/workflows/pre-commit-and-test.yml/badge.svg)](https://github.com/MoodyMakai/CapstoneHW5/actions/workflows/pre-commit-and-test.yml)
