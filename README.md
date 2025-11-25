@@ -73,18 +73,17 @@ pre-commit should also run automatically when commiting.
 
 
 ## Table of Testing Times 
-_________________________________________________________________
-|Operating System | Python Version  |  Test Time  |  Total Time |  
-|_________________|_________________|_____________|_____________|
-|  Mac            |  3.9            |  63.04s     |  116s       |
-|_________________|_________________|_____________|_____________|
-|  Mac            |  3.10           |  70.19s     |  116s       |
-|_________________|_________________|_____________|_____________|
-|  Windows        |  3.9            |  79.50s     |  133s       |
-|_________________|_________________|_____________|_____________|
-|  Windows        |  3.10           |  74.30s     |  120s       |
-|_________________|_________________|_____________|_____________|
-|  Ubuntu/Linux   |  3.9            |  75.38s     |  93s        |
-|_________________|_________________|_____________|_____________|
-|  Ubuntu/Linux   |  3.10           |  69.70s     |  88s        |
-|_________________|_________________|_____________|_____________|
+
+| Operating System | Python Version | Test Time | Total Time |
+|------------------|----------------|-----------|------------|
+| Mac              | 3.9            | 63.04s    | 116s       |
+| Mac              | 3.10           | 70.19s    | 116s       |
+| Windows          | 3.9            | 79.50s    | 133s       |
+| Windows          | 3.10           | 74.30s    | 120s       |
+| Ubuntu/Linux     | 3.9            | 75.38s    | 93s        |
+| Ubuntu/Linux     | 3.10           | 69.70s    | 88s        |
+
+
+## Testing Status
+
+[![Operating Systems Test + Python two Version test.](https://github.com/MoodyMakai/CapstoneHW5/actions/workflows/OS-tests.yml/badge.svg)](https://github.com/MoodyMakai/CapstoneHW5/actions/workflows/OS-tests.yml)
